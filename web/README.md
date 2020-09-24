@@ -1,4 +1,6 @@
 # LESSON PLAN 
+https://codepen.io/pinot/pen/qBZgZdQ 
+
 web javascript
 input value, enter name, then inner HTML print "hi my name is" + enteredName
 
