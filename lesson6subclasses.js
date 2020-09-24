@@ -1,4 +1,4 @@
-/*
+
 class User {
     email;
     display_name;
@@ -47,7 +47,7 @@ let user = new User(asjdijasdasdjaoisd)
 
 user.saveCard(cardDetails);
 
-*/
+
 /*
 class Animal {
     species;

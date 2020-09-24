@@ -58,7 +58,6 @@ items['apple'] = 1.99;
 items['burrito'] = 5;
 items['red_shirt'] = 10;
 */
-
 let items = [
     ['apple', 1.99],
     ['burrito', 5],
