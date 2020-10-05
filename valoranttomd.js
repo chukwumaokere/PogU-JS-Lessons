@@ -113,12 +113,43 @@ let html = axios.get(url).then(html => {
                                 */
                                 
                             }else{
-                                
+                                //if(weapon_name == )
+                                console.log('WEAPON NAME', weapon_name);
+                                let change = changes_ul.findAll('li');
+
+                                for (let change_piece of change){
+                                    let update_text = change_piece.text;
+                                    update_text = update_text.replace(/&gt;/g,'>');
+                                    update_text = update_text.replace(/&lt;/g,'<');
+                                    let parent_next_sibling;
+                                    let next_sibling;
+                                    try{
+                                        parent_next_sibling = change_piece.parent.nextSibling.name;
+                                        next_sibling = change_piece.nextSibling.name;
+                                    }catch(err){
+
+                                    }
+                                    
+                                    if (parent_next_sibling == 'h2'  && !next_sibling){
+                                       
+                                        //patch_notes += `* J: ${update_text} \n`
+                                        //break;
+                                    }else{ 
+                                        console.log('sidajidjs', update_text)  
+                                        //patch_notes += `* U: ${update_text} \n`
+                                        
+                                    }
+                                    //break;
+                                    //patch_notes += `* K: ${update_text}\n`
+                                    //console.log('sidajidjs', update_text)
+                                } 
                             }
                         //})
                             break;
                         }
                     })
+                }else{
+                    //patch_notes += "bro";
                 }
             })    
         }
