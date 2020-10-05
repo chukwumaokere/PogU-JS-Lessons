@@ -30,3 +30,31 @@ Then it'll have cards components with images of food, and button for add to cart
 UNIT CONVERSION CALCULATOR: 
 https://www.blog.duomly.com/wp-content/uploads/2020/06/unit-measures-calculator.png
 Takes an input and converts from one to the other 
+
+1) For the first one https://codesandbox.io/s/laughing-perlman-fgudr I created it really quickly so you can reference the done code in case you need to reference the working code
+on the left is the link i sent you, with a couple more additions (I added a footer and a logo) 
+then on the right, is the same thing but i added way more components so i can abstractify the main App.vue file to the most syntactically pleasing template
+https://cdn.discordapp.com/attachments/546208188123447296/762547147081383956/unknown.png
+
+If you can figure out enough to get the right hand result, where the HTML for that is literally just: 
+```html
+  <Container>
+    <Logo />
+    <Navbar />
+    <Input placeholder="Search..." />
+  </Container>
+  <Footer text="Created by Chuck!" />
+```
+then you've made it
+(heres the link to the other one in case you want to study how i created it: https://codesandbox.io/s/muddy-haze-ssj76)
+
+id say you do that project, (the first one) then try to get to the second one (the one on the right) 
+Then do maybe the todo app update either one (the task list with vue.js or the style one) 
+then you should be ready to do the employee cards one (which introduces component life cycles), then the reddit client (which introduces the vue router)
+then you should be fairly proficient in vue/front end framework basics
+which will make react easy 
+then angular easy as well
+
+
+Bank app with routes? 
+Buy items with a fixed starting total and add to card to deduct amounts
