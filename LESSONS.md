@@ -85,3 +85,9 @@ Creating components and iterable components using Vue syntax, adding bootstrap t
 IF YOU CANNOT FIGURE OUT HOW TO DEDUCT AND ADD VALUES TO A COMPONENT PLEASE DONT WORRY ABOUT IT. 
 https://cdn.discordapp.com/attachments/546208188123447296/762900241770479616/unknown.png
 Placeholder image: https://www.flaticon.com/svg/static/icons/svg/1377/1377194.svg
+
+Then follow some of this: https://dev.to/codeartistryio/5-react-projects-you-need-in-your-portfolio-1c3b
+Then Employee card app with axios
+Then reddit client
+
+Then custom personal app
