@@ -39,117 +39,30 @@ let html = axios.get(url).then(html => {
         patch_notes += `\n`;
     })
     titles.forEach(function(title){
-        if (title.text == "WEAPON UPDATES"){
+        if (title.text != "AGENT UPDATES" && !title.text.includes("VALORANT Patch Notes")){
             patch_notes += `${title.text}\n\n`;
             let weapon_ps = title.findNextSiblings('p');
+            let other_uls = title.findNextSiblings('ul');
             weapon_ps.forEach(function(weapon_p){
                 if(weapon_p.nextElement.name == 'strong'){
                     let weapon_name = weapon_p.nextElement.text;
+                    //console.log(weapon_name);
                     patch_notes += `## ${weapon_name}\n`;
                     let changes_uls = weapon_p.findNextSiblings('ul');
-                    changes_uls.forEach(function(changes_ul){
-                        let previouses = changes_ul.findPreviousSiblings('p');
-                        for (let previous of previouses){
-                        //previouses.forEach(function(previous){
-                            if( previous.text == weapon_name){
-                                let change = changes_ul.findAll('li');
-
-                                for (let change_piece of change){
-                                    let update_text = change_piece.text;
-                                    update_text = update_text.replace(/&gt;/g,'>');
-                                    update_text = update_text.replace(/&lt;/g,'<');
-                                    let parent_next_sibling;
-                                    let next_sibling;
-                                    try{
-                                        parent_next_sibling = change_piece.parent.nextSibling.name;
-                                        next_sibling = change_piece.nextSibling.name;
-                                    }catch(err){
-
-                                    }
-                                    /*
-                                    console.log('CHANGE: ', update_text);
-                                    console.log('parent_next_sibling:', parent_next_sibling);
-                                    console.log('next_sibling:', next_sibling);                                    
-                                    */
-                                    if (parent_next_sibling == 'h2'  && !next_sibling){
-                                        //console.log(update_text)
-                                        //console.log('GET OUT');
-                                        patch_notes += `* l: ${update_text} \n`
-                                        //break;
-                                    }else{ 
-                                        //console.log('uh: ', update_text, next_sibling)
-                                        patch_notes += `* ${update_text} \n`
-                                        
-                                    }
-                                    //break;
-                                }
-
-                                /*
-                                change.forEach(function(update){
-                                    let update_text = update.text;
-                                    update_text = update_text.replace(/&gt;/g,'>');
-                                    update_text = update_text.replace(/&lt;/g,'<');
-                                    let parent_next_sibling;
-                                    let next_sibling;
-                                    try{
-                                        parent_next_sibling = update.parent.nextSibling.name;
-                                        next_sibling = update.nextSibling.name;
-                                    }catch(err){
-
-                                    }
-
-                                    console.log('CHANGE: ', update_text);
-                                    console.log('parent_next_sibling:', parent_next_sibling);
-                                    console.log('next_sibling:', next_sibling);                                    
-
-                                    if (parent_next_sibling == 'h2'  && !next_sibling){
-                                        console.log('GET OUT');
-                                    }else{ 
-                                        if(next_sibling){
-                                            patch_notes += `* ${update_text} \n`
-                                        }
-                                    }
-                                })
-                                */
-                                
-                            }else{
-                                //if(weapon_name == )
-                                console.log('WEAPON NAME', weapon_name);
-                                let change = changes_ul.findAll('li');
-
-                                for (let change_piece of change){
-                                    let update_text = change_piece.text;
-                                    update_text = update_text.replace(/&gt;/g,'>');
-                                    update_text = update_text.replace(/&lt;/g,'<');
-                                    let parent_next_sibling;
-                                    let next_sibling;
-                                    try{
-                                        parent_next_sibling = change_piece.parent.nextSibling.name;
-                                        next_sibling = change_piece.nextSibling.name;
-                                    }catch(err){
-
-                                    }
-                                    
-                                    if (parent_next_sibling == 'h2'  && !next_sibling){
-                                       
-                                        //patch_notes += `* J: ${update_text} \n`
-                                        //break;
-                                    }else{ 
-                                        console.log('sidajidjs', update_text)  
-                                        //patch_notes += `* U: ${update_text} \n`
-                                        
-                                    }
-                                    //break;
-                                    //patch_notes += `* K: ${update_text}\n`
-                                    //console.log('sidajidjs', update_text)
-                                } 
-                            }
-                        //})
-                            break;
-                        }
+                    //console.log(changes_uls);
+                    changes_uls.forEach(function(change){
+                        //console.log(`${change.text} \n`);
+                        patch_notes += `${change.text} \n`;
                     })
+                   
                 }else{
                     //patch_notes += "bro";
+                }
+            })
+            other_uls.forEach(function(other_ul){
+                if(other_ul.nextElement.name == "li"){
+                    let other_update = other_ul.nextElement.text;
+                    patch_notes += `OKOKOK: ${other_update} \n`;
                 }
             })    
         }
