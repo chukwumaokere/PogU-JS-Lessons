@@ -84,3 +84,4 @@ If you run into issues, DM me on discord.
 Creating components and iterable components using Vue syntax, adding bootstrap to a vue project, adding buttons with - and + symbols, writing functions for those - and + buttons, adding components with props, using bootstrap. 
 IF YOU CANNOT FIGURE OUT HOW TO DEDUCT AND ADD VALUES TO A COMPONENT PLEASE DONT WORRY ABOUT IT. 
 https://cdn.discordapp.com/attachments/546208188123447296/762900241770479616/unknown.png
+Placeholder image: https://www.flaticon.com/svg/static/icons/svg/1377/1377194.svg
